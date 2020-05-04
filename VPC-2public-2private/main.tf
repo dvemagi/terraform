@@ -8,6 +8,7 @@ module "network" {
 
 module "directory" {
     source = "./modules/directory/"
+    
     vpc_id = module.vpc.vpc_id
-    subnet_ids = module.vpc.public_subnets
+    subnet_ids = module.network.public_subnets
 }
