@@ -2,10 +2,12 @@
 # 
 # i parametri vpc_id e subnet_ids sono passati dal main.tf chiamante
 
-variable "vpc_id" {}
+variable "vpc_id" {
+  description = "id del vpc"
+}
 
 variable "subnet_ids"{
-  description = "id del vpc"
+  description = "subner private"
 }
 
 resource "aws_directory_service_directory" "ds" {
