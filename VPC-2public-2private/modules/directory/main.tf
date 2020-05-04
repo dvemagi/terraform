@@ -2,12 +2,12 @@
 # 
 # i parametri vpc_id e subnet_ids sono passati dal main.tf chiamante
 
-var "vpc_id"{
+variabile "vpc_id"{
   description = "id del vpc"
   type = string
 }
 
-var "subnet_ids"{
+variabile "subnet_ids"{
   description = "id del vpc"
   type = string
 }
