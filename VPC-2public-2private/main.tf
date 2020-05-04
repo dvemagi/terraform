@@ -5,3 +5,7 @@ provider "aws" {
 module "network" {
     source = "./modules/network/"
 }
+
+module "directory" {
+    source = "./modules/directory/"
+}
