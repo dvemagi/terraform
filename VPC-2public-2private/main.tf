@@ -9,6 +9,6 @@ module "vpc" {
 module "ds" {
     source = "./modules/directory/"
 
-    vpc_id = modules.vpc.vpc_id
-    subnet_ids = modules.vpc.private_subnets
+    vpc_id = "${modules.vpc.vpc_id}"
+    subnet_ids = "${modules.vpc.private_subnets}"
 }
