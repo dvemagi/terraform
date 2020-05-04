@@ -2,6 +2,16 @@
 # 
 # i parametri vpc_id e subnet_ids sono passati dal main.tf chiamante
 
+var "vpc_id"{
+  description = "id del vpc"
+  type = string
+}
+
+var "subnet_ids"{
+  description = "id del vpc"
+  type = string
+}
+
 resource "aws_directory_service_directory" "ds" {
   name     = "corp.notexample.com"
   password = "SuperSecretPassw0rd"
@@ -9,8 +19,8 @@ resource "aws_directory_service_directory" "ds" {
   type     = "MicrosoftAD"
 
  vpc_settings {
-    vpc_id     = module.vpc_id
-    subnet_ids = module.vpc.private_subnets
+    vpc_id     = ${var.vpc_id}
+    subnet_ids = ${var.subnet_ids}
 }
 
   tags = {
