@@ -8,10 +8,10 @@ resource "aws_directory_service_directory" "directory" {
   edition = "Standard"
   type     = "MicrosoftAD"
 
-# vpc_settings {
-#    vpc_id     = "${aws_vpc.vpc_id.ids.id}"
-#    subnet_ids = ["${aws_subnet.sub.ids.id}",]
-#  }
+ vpc_settings {
+    vpc_id     = "${aws_vpc.vpc_id.ids.id}"
+   subnet_ids = "${aws_subnet.sub.ids.id}"
+}
 
   tags = {
     Project = "tf-test-ds"
