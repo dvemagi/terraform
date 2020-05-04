@@ -22,6 +22,7 @@ resource "aws_directory_service_directory" "ds" {
 }
 
   tags = {
-    Project = "tf-test-ds"
+    app = "tf-test"
+    Name = "tf-test-ds"
   }
 }
