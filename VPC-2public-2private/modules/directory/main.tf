@@ -3,12 +3,14 @@
 
 # recupero delle info del vpc
 
-data "aws_subnet_ids" "sub_priv" {
-    module.vpc.private_subnets
+data "aws_subnet_ids" "sub" {
+    name = "sub"
+    ids = module.vpc.private_subnets
 }
 
 data "aws_vpc" "vpc_id" {
-    module.vpc.vpc_id
+    name = "vpc_id"
+    ids = module.vpc.vpc_id
 }
 
 #
@@ -16,11 +18,12 @@ data "aws_vpc" "vpc_id" {
 resource "aws_directory_service_directory" "directory" {
   name     = "corp.notexample.com"
   password = "SuperSecretPassw0rd"
-  size     = "Small"
+  edition = "Standard"
+  type     = "MicrosoftAD"
 
   vpc_settings {
-    vpc_id     = "${aws_vpc.vpc_id.id}"
-    subnet_ids = ["${aws_subnet.sub_priv.id[0],aws_subnet.sub_priv.id[1]}",]
+    vpc_id     = "${aws_vpc.vpc_id.ids.id}"
+    subnet_ids = ["${aws_subnet.sub.ids.id[0],aws_subnet.sub_priv.id[1]}",]
   }
 
   tags = {
