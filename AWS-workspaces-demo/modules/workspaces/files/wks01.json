@@ -1,0 +1,13 @@
+{
+    "Workspaces" : [
+                      {
+                      "DirectoryId" : "${Directory}",
+                      "UserName" : "demo01",
+                      "BundleId" : "wsb-bh8rsxt14",
+                      "WorkspaceProperties": {
+                          "RunningMode": "AUTO_STOP", 
+                          "RunningModeAutoStopTimeoutInMinutes": 60 
+                           }  
+                    }
+                   ]
+   }
