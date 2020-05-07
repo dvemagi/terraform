@@ -7,7 +7,11 @@ variable "env" {
 variable "region" {
   type        = string
   description = "Region di AWS"
-  default = eu-west-1
+  default = "eu-west-1"
+}
+
+variable "CIDR" {
+  type = string
 }
 
 provider "aws" {
@@ -18,4 +22,5 @@ module "network" {
   source = "./modules/network/"
   env    = var.env
   region = var.region
+  CIDR = var.CIDR
 }
