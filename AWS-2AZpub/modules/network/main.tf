@@ -19,11 +19,11 @@ module "subs" {
   networks = [
     {
       name     = "pub-a"
-      new_bits = 4
+      new_bits = 2
     },
     {
       name     = "pub-b"
-      new_bits = 4
+      new_bits = 2
     }
 
   ]
