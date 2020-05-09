@@ -5,10 +5,12 @@ variable "env" {
 
 variable "region" {
   type = string
+  description = "region AWS in cui effettuare il deploy (es. eu-south-1)"
 }
 
 variable "CIDR" {
   type = string
+  description = "Network del VPC (es. 172.31.0.0/21)"
 }
 
 # Partendo dal CIDR della VPC aggiungo 4bit alla mask e assegno alle network 
@@ -19,19 +21,19 @@ module "subs" {
   networks = [
     {
       name     = "pub-a"
-      new_bits = 4
+      new_bits = 3
     },
     {
       name     = "pub-b"
-      new_bits = 4
+      new_bits = 3
     },
     {
       name     = "pri-a"
-      new_bits = 4
+      new_bits = 3
     },
     {
       name     = "pri-b"
-      new_bits = 4
+      new_bits = 3
     },
 
 
