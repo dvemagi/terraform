@@ -11,7 +11,7 @@ Include:
 
  
 **Env** nome del deploy che verrà usato per la VPC  
-**CIDR** CIDR della VPC
+**CIDR** CIDR della VPC  
 **region** region AWS dove effettuare il deploy
 
  
