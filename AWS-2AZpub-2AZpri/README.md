@@ -20,8 +20,10 @@ subnet pub 1 172.31.2.0/22 (da 172.31.2.0 a 172.31.3.255)
 subnet pub 1 172.31.4.0/22 (da 172.31.4.0 a 172.31.5.255)   
 subnet pub 1 172.31.6.0/22 (da 172.31.6.0 a 172.31.7.255)  
  
+## Variabili Richieste
+
 **Env** nome del deploy che verrà usato per la VPC  
-**CIDR** CIDR della VPC
-**region** region AWS dove effettuare il deploy
+**CIDR** CIDR della VPC  
+**region** region AWS dove effettuare il deploy  
 
  

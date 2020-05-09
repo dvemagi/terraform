@@ -15,7 +15,7 @@ variable "CIDR" {
 }
 
 provider "aws" {
-  region = var.regionterra
+  region = var.region
 }
 
 module "network" {
