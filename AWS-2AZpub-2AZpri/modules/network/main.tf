@@ -49,7 +49,7 @@ module  "vpc" {
 
   cidr = var.CIDR
 
-  azs             = ["${var.region}a", "e${var.region}b"]
+  azs             = ["${var.region}a", "${var.region}b"]
   private_subnets = [module.subs.networks[2].cidr_block , module.subs.networks[3].cidr_block]
   public_subnets  = [module.subs.networks[0].cidr_block , module.subs.networks[1].cidr_block]
 
