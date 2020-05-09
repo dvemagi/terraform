@@ -13,7 +13,7 @@ variable "CIDR" {
   description = "Network del VPC (es. 172.31.0.0/21)"
 }
 
-# Partendo dal CIDR della VPC aggiungo 4bit alla mask e assegno alle network 
+# Partendo dal CIDR della VPC aggiungo 3 bit alla mask e assegno alle network 
 module "subs" {
   source = "hashicorp/subnets/cidr"
 

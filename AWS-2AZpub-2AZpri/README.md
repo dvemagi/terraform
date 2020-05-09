@@ -12,15 +12,15 @@ Include:
 
 ## Info per il deploy
 Il cidr deve essere immesso con la netmask in bit  
-Le subnet aumenteranno la maschera di 3 bit, usando le prime 4 classi. Prime due private, le seconde pubbliche. Il resto del vpc non verrà allocato  (quindi allocando solo la metà delle subnet possibili)
+Le subnet aumenteranno la maschera di 3 bit, usando le prime 4 classi. Prime due pubbliche, le seconde private. Il resto del vpc non verrà allocato  (quindi allocando solo la metà degli indirizzi della VPC )
 
 Es. **CIDR 172.31.0.0/20** (da 172.31.0.0 a 172.31.15.255)   
-subnet pub 1 172.31.0.0/22 (da 172.31.0.0 a 172.31.1.255)  
-subnet pub 1 172.31.2.0/22 (da 172.31.2.0 a 172.31.3.255)  
-subnet pub 1 172.31.4.0/22 (da 172.31.4.0 a 172.31.5.255)   
-subnet pub 1 172.31.6.0/22 (da 172.31.6.0 a 172.31.7.255)  
+subnet pub 1 172.31.0.0/23 (da 172.31.0.0 a 172.31.1.255)  
+subnet pub 2 172.31.2.0/23 (da 172.31.2.0 a 172.31.3.255)  
+subnet pri 1 172.31.4.0/23 (da 172.31.4.0 a 172.31.5.255)   
+subnet pri 2 172.31.6.0/23 (da 172.31.6.0 a 172.31.7.255)  
  
-## Variabili Richieste
+## Variabili Richieste da inserire in terraform.tfvars
 
 **Env** nome del deploy che verrà usato per la VPC  
 **CIDR** CIDR della VPC  

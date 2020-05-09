@@ -1,21 +1,21 @@
 
 variable "env" {
-  type        = string
+  type = string
   description = "Nome dell'ambiente"
 }
 
 variable "region" {
-  type        = string
-  description = "Region di AWS"
-  default = "eu-west-1"
+  type = string
+  description = "region AWS in cui effettuare il deploy (es. eu-south-1)"
 }
 
 variable "CIDR" {
   type = string
+  description = "Network del VPC (es. 172.31.0.0/21)"
 }
 
 provider "aws" {
-  region = "eu-west-1"
+  region = var.region
 }
 
 module "network" {
