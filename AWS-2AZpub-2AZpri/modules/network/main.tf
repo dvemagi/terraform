@@ -1,3 +1,8 @@
+# Terraform per la creazione di un VPC
+#
+# Copyright (c) 2020 Dario Vemagi
+# Under MIT License
+
 variable "env" {
   type = string
   description = "Nome dell'ambiente"
@@ -40,8 +45,6 @@ module "subs" {
 
   ]
 }
-
-
 
 module  "vpc" {
 
