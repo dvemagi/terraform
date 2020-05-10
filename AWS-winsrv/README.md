@@ -2,7 +2,7 @@
 
 Utilizza una subnet esistente e crea una istanza con una password data cambiando il nome windows
 
-## Variafili da inserire in terraform.tfvars
+## Variabili da inserire in terraform.tfvars
 
 **region** Region AWS in cui effetuare il deploy  
 **nome** nome dell'istanza  
