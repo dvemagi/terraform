@@ -1,18 +1,14 @@
 # Nome del deploy e del server - se non inserita viene chiesta al prompt
-nome = "commercialdado-sql"
+nome = "winsrv"
 
 # Valore da aggiungere nel tag app
-app = "commercialdado"
+app = "deploy"
 
 # Region in cui effettuare il deploy
 # Region AWS di deploy
 region = "eu-south-1" # Milano
 #region = "eu-west-1" # Dublino
 #region = "eu-wes-2" # Francoforte  
-
-# Subnet di deploy
-subnet = "subnet-0d1c1189c4ae8bb60"
-
 
 # Subnet in cui effettuaree il deploy - se non inserita viene chiesta al prompt
 #subnet = ""

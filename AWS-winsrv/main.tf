@@ -66,6 +66,7 @@ resource "aws_security_group" "subnet" {
   vpc_id = data.aws_subnet.subnet.vpc_id
 
   name = "${var.nome}-sg"
+  description = "Security group per istanza ${var.nome}"
 
   ingress {
     cidr_blocks = ["0.0.0.0/0"]
@@ -103,18 +104,18 @@ root_block_device = [
 user_data = <<EOF
     <powershell>
     $admin = [adsi]("WinNT://./administrator, user")
-    $admin.PSBase.Invoke("SetPassword", "{{ ${var.password} }}")
+    $admin.PSBase.Invoke("SetPassword", "${var.password}")
     </powershell>
     EOF
 
 
   tags = {
-    app   = var.nome
-    Name = var.app
+    app   = var.app
+    Name = var.nome
   }
 
   volume_tags = {
-    app   = var.nome
-    Name = var.app
+    app   = var.app
+    Name = var.nome
   }
 }
