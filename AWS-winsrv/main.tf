@@ -22,7 +22,12 @@ variable "password" {
 
 variable "nome" {
     type = string
-    description = "Nome istanza e del deploy"
+    description = "Nome istanza "
+}
+
+variable "app" {
+    type = string
+    description = "Tag app"
 }
 
 variable "root_size" {
@@ -35,7 +40,7 @@ provider "aws" {
   region = var.region
 }
 
-# modulo che recupera  ami più aggiornata per win2016 in questa region
+# Recupero  ami più aggiornata per win2016 in questa region
 # possibile cambiare English in Italian o altre lingue
 
 data "aws_ami" "win2016" {
@@ -49,12 +54,18 @@ data "aws_ami" "win2016" {
   owners = ["amazon"] 
 }
 
+# Recupero le informazioni dalla subnet id
+
 data "aws_subnet" "subnet" {
   id = var.subnet
 }
 
+# Creo i security group per l'accesso
+
 resource "aws_security_group" "subnet" {
   vpc_id = data.aws_subnet.subnet.vpc_id
+
+  name = "${var.nome}-sg"
 
   ingress {
     cidr_blocks = ["0.0.0.0/0"]
@@ -63,14 +74,15 @@ resource "aws_security_group" "subnet" {
     protocol    = "tcp"
   }
   tags = {
-    app   = var.nome
-    Name  = "${var.nome}-sg"
+    app   = var.app
   }
 }
 
 module "win_instance" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
   version                = "~> 2.0"
+
+  associate_public_ip_address = true
 
   name                   = var.nome
   instance_count         = 1
@@ -87,14 +99,22 @@ root_block_device = [
     },
   ]
 
+# cambio la password di windows
+user_data = <<EOF
+    <powershell>
+    $admin = [adsi]("WinNT://./administrator, user")
+    $admin.PSBase.Invoke("SetPassword", "{{ ${var.password} }}")
+    </powershell>
+    EOF
+
 
   tags = {
     app   = var.nome
-    Name = var.nome
+    Name = var.app
   }
 
   volume_tags = {
     app   = var.nome
-    Name = var.nome
+    Name = var.app
   }
 }
