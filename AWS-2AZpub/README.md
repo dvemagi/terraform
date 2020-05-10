@@ -15,7 +15,7 @@ Le subnet aumenteranno la maschera di 2 bit, usando le prime 2 classi.Il resto d
 
 Es. **CIDR 172.31.0.0/20** (da 172.31.0.0 a 172.31.15.255)   
 subnet pub 1 172.31.0.0/22 (da 172.31.0.0 a 172.31.3.255)  
-subnet pub 1 172.31.4.0/22 (da 172.31.4.0 a 172.31.7.255)  
+subnet pub 2 172.31.4.0/22 (da 172.31.4.0 a 172.31.7.255)  
  
  
 ## Variabili Richieste da inserire in terraform.tfvars

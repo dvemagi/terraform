@@ -1,3 +1,8 @@
+# Output del modulo per la creazione di un VPC
+#
+# Copyright (c) 2020 Dario Vemagi
+# Under MIT License
+
 # VPC
 output "vpc_id" {
   description = "The ID of the VPC"
