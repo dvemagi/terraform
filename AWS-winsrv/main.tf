@@ -109,7 +109,6 @@ user_data = <<EOF
     </powershell>
     EOF
 
-
   tags = {
     app   = var.app
     Name = var.nome
