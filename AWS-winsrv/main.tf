@@ -105,6 +105,7 @@ user_data = <<EOF
     <powershell>
     $admin = [adsi]("WinNT://./administrator, user")
     $admin.PSBase.Invoke("SetPassword", "${var.password}")
+    Rename-Computer -NewName ${var.nome} -Restart
     </powershell>
     EOF
 
