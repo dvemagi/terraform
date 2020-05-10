@@ -1,4 +1,9 @@
+# Terraform per la creazione di un VPC con 2 subnet pubbliche in 2 AZ
+#
+# Copyright (c) 2020 Dario Vemagi
+# Under MIT License
 
+# Variabili 
 variable "env" {
   type = string
   description = "Nome dell'ambiente"

@@ -1,3 +1,8 @@
+# Terraform.tfvars per la creazione di un VPC
+#
+# Copyright (c) 2020 Dario Vemagi
+# Under MIT License
+
 # Nome che verrà attibuito al deploy. Tag app=deploy
 env = "terra-mi"
 
