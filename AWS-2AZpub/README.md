@@ -6,8 +6,7 @@ Include:
 - 2 Subnet (1 per AZ)
 - 1 Internet Gateway
 - 1 Route table Pubblica
-- 1 NAT Gateway
-- 1 EIP collegato al NAT Gateway
+
 
 ## Info per il deploy
 Il cidr deve essere immesso con la netmask in bit  
