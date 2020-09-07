@@ -1,8 +1,6 @@
-# Terraform per creare un server windows 2016
+# Terraform per creare un server Amazon Linux 2
 
-Utilizza una subnet esistente e crea una istanza con una password data cambiando il nome windows.  
-Il server deve eseguire un reboot dopo cambiato il nome per cui attendere 5 minuti dopo il deploy   
-
+Utilizza una subnet esistente e crea una istanza   
 
 ## Variabili da inserire in terraform.tfvars
 
@@ -10,6 +8,6 @@ Il server deve eseguire un reboot dopo cambiato il nome per cui attendere 5 minu
 **nome** nome dell'istanza  
 **app** Valore del tag app   
 **tipo** tipo di istanza  
-**password** password peer l'utente administrator da inserire  
+**keyname** nome del keypair da usare per l'autenticazionee
 **subnet** id della subnet in cui effettuare il deploy  
 **root_size** Dimensione in GB del disco di root  
