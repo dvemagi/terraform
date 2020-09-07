@@ -1,5 +1,5 @@
 # Nome del deploy e del server - se non inserita viene chiesta al prompt
-nome = "winsrv"
+nome = "lnxsrv"
 
 # Valore da aggiungere nel tag app
 app = "deploy"
@@ -13,8 +13,6 @@ region = "eu-south-1" # Milano
 # Subnet in cui effettuaree il deploy - se non inserita viene chiesta al prompt
 #subnet = ""
 
-# Password da inserire per utente administrator
-password = "!Password0"
 
 # Tipo di istanza
 tipo = "t3.large"
