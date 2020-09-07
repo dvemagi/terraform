@@ -13,3 +13,4 @@ CIDR = "172.31.252.0/22"
 region = "eu-south-1" # Milano
 #region = "eu-west-1" # Dublino
 #region = "eu-wes-2" # Francoforte  
+#region = "us-east-1" # North Virginia
