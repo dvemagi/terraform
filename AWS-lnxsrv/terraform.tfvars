@@ -10,6 +10,9 @@ region = "eu-south-1" # Milano
 #region = "eu-west-1" # Dublino
 #region = "eu-wes-2" # Francoforte  
 
+# Keypair
+keyname = "Dario"
+
 # Subnet in cui effettuaree il deploy - se non inserita viene chiesta al prompt
 #subnet = ""
 

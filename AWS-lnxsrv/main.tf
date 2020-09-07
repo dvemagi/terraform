@@ -15,6 +15,10 @@ variable "tipo" {
     description = "Tipo di istanza"
 }
 
+variable "keyname" {
+    type = string
+    description = "Keypair"
+}
 
 variable "nome" {
     type = string
@@ -85,8 +89,10 @@ module "win_instance" {
 
   ami                    = data.aws_ami.amz2.id
   instance_type          = var.tipo
+  key_namw               = var.keyname
   vpc_security_group_ids = [aws_security_group.subnet.id]
   subnet_id              = var.subnet
+
 
 root_block_device = [
     {
