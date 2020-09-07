@@ -78,7 +78,7 @@ resource "aws_security_group" "subnet" {
   }
 }
 
-module "win_instance" {
+module "lnx_instance" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
   version                = "~> 2.0"
 
@@ -89,7 +89,7 @@ module "win_instance" {
 
   ami                    = data.aws_ami.amz2.id
   instance_type          = var.tipo
-  key_namw               = var.keyname
+  key_name              = var.keyname
   vpc_security_group_ids = [aws_security_group.subnet.id]
   subnet_id              = var.subnet
 
